@@ -1,0 +1,56 @@
+# Java / Maven
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+
+# VS Code
+.vscode/
+
+# Spring Boot
+.spring-boot-devtools.properties
+
+# H2 databases
+*.mv.db
+*.h2.db
+
+# Env
+.env
+
+# Node (si hubiera front)
+node_modules/
+yarn.lock
+package-lock.json
+
+# Coverage / reports
+coverage/
+.site/
+
+# Others
+*.swp
+*.swo

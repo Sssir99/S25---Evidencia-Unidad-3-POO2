@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Empleados</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background: #f4f4f4; text-align: left; }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+</head>
+<body>
+<main>
+    <h1>Empleados</h1>
+    <p>
+        <a th:href="@{/employees/new}">Adicionar empleado</a>
+    </p>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="e : ${employees}">
+            <td th:text="${e.id}"></td>
+            <td th:text="${e.firstName + ' ' + e.lastName}"></td>
+            <td th:text="${e.email}"></td>
+            <td>
+                <a th:href="@{'/employees/' + ${e.id} + '/edit'}">Editar</a>
+                <form th:action="@{'/employees/' + ${e.id} + '/delete'}" method="post" style="display:inline">
+                    <button type="submit">Borrar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+ </html>
+
+

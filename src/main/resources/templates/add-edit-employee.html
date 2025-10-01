@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Empleado</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+</head>
+<body>
+<main>
+    <h1 th:text="${employee.id} != null ? 'Editar empleado' : 'Nuevo empleado'">Empleado</h1>
+
+    <form th:action="@{/employees}" method="post" th:object="${employee}">
+        <input type="hidden" th:if="${employee.id}" th:field="*{id}"/>
+
+        <label>Nombres
+            <input th:field="*{firstName}" required />
+        </label>
+        <label>Apellidos
+            <input th:field="*{lastName}" required />
+        </label>
+        <label>Email
+            <input th:field="*{email}" type="email" required />
+        </label>
+
+        <button type="submit">Guardar</button>
+        <a th:href="@{/employees}">Volver</a>
+    </form>
+</main>
+</body>
+</html>
+
+
